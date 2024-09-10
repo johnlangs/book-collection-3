@@ -1,0 +1,33 @@
+<%= form_with model: book do |form| %>
+  <div>
+
+    <%= form.label :title %> 
+    <%= form.text_field :title %>
+    <% book.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+
+    <%= form.label :author %> 
+    <%= form.text_field :author %>
+    <% book.errors.full_messages_for(:author).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+
+    <%= form.label :price %> 
+    <%= form.number_field :price %>
+    <% book.errors.full_messages_for(:price).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+
+    <%= form.label :published_date %> 
+    <%= form.date_field :published_date %>
+    <% book.errors.full_messages_for(:published_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %> 
+  </div>
+
+  <div>
+    <%= form.submit 'Create New Book' %>
+  </div>
+<% end %>
+
